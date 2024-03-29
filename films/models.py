@@ -9,6 +9,7 @@ class User(AbstractUser):
 class Film(models.Model):
     name = models.CharField(max_length=255, unique=True)
     users = models.ManyToManyField(User, related_name='films', through='UserFilms') # this related will help us to get all films of a user like user.films.all()
+    photo = models.ImageField(upload_to='film_photos/', blank=True, null=True)
 
     def __str__(self):
         return self.name
