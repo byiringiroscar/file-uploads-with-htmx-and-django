@@ -21,6 +21,7 @@ htmx_urlpatterns = [
     path('clear/', views.clear, name='clear'),
     path('sort/', views.sort, name='sort'),
     path('detail/<int:pk>/', views.detail, name='detail'),
+    path('film-list-partial/', views.films_partial, name='film-list-partial'),
 ]
 
 

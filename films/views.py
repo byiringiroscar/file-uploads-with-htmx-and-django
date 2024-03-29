@@ -114,3 +114,9 @@ def detail(request, pk):
         'userfilm': userfilm
     }
     return render(request, 'partials/film-detail.html', context)
+
+
+@login_required
+def films_partial(request):
+    films = UserFilms.objects.filter(user=request.user)
+    return render(request, 'partials/film-list.html', {'films': films})
